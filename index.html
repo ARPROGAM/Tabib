@@ -1,61 +1,93 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabib Korea</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
-    .video-container {
-      position: relative;
-      width: 80%;
-      max-width: 720px;
-      margin: 0 auto;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    select {
-      margin-top: 20px;
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merlin 1. Bölüm | Türkçe Dublaj | Ejderhanın Çağrısı</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Night mode */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .title {
+            font-size: 3rem; /* Large title font */
+            font-weight: bold;
+            margin-top: 20px; /* Added margin-top so the title does not overlap */
+            color: #f0f0f0; /* Light color for title */
+            text-transform: uppercase;
+            margin-bottom: 20px; /* Added space below title */
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Maximum video width */
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .description {
+            max-width: 90%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222; /* Dark grey */
+            border: 1px solid #555;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem; /* Adjust title font size for mobile */
+            }
+            .description {
+                font-size: 0.9rem; /* Smaller text for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem; /* Smaller title for very small screens */
+            }
+            .description {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <script>
+        // Disable right-click on the entire page
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </head>
 <body>
-  <h1>Tabib Korea</h1>
-  <div class="video-container">
-    <iframe id="videoPlayer" src="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  
-  <select id="episodeSelector">
-    <option value="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4">1-qism</option>
-    <option value="https://v.uzbeklar.biz/film44/tabib-korea/2qism.mp4">2-qism</option>
-    <option value="https://v.uzbeklar.biz/film44/tabib-korea/3qism.mp4">3-qism</option>
-    <option value="https://v.uzbeklar.biz/film44/tabib-korea/4qism.mp4">4-qism</option>
-    <option value="https://v.uzbeklar.biz/film44/tabib-korea/5qism.mp4">5-qism</option>
-    <!-- Add more episodes as needed -->
-  </select>
+    <!-- Video title at the top center above the player -->
+    <div class="title">Merlin 1. Bölüm | Türkçe Dublaj | Ejderhanın Çağrısı</div>
 
-  <script>
-    // Handle video switching
-    const episodeSelector = document.getElementById('episodeSelector');
-    const videoPlayer = document.getElementById('videoPlayer');
+    <!-- Custom Video Player using Google Drive link -->
+    <div class="video-container">
+        <iframe src="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4/preview" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-    episodeSelector.addEventListener('change', function () {
-      const newLink = this.value;
-      videoPlayer.src = newLink;
-    });
-  </script>
+
+
 </body>
 </html>
