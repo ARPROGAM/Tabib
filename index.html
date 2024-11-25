@@ -3,23 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARZU</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Tabib Korea</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .video-container {
+      position: relative;
+      width: 80%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    select {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tabib ArZt Korea</h1>
-    <div class="video-player">
-      <video id="videoPlayer" controls>
-        <source src="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4" id="videoSource" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="playlist">
-      <h2>Episodes</h2>
-      <ul id="episodeList"></ul>
-    </div>
+  <h1>Tabib Korea</h1>
+  <div class="video-container">
+    <iframe id="videoPlayer" src="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
-  <script src="script.js"></script>
+  
+  <select id="episodeSelector">
+    <option value="https://v.uzbeklar.biz/film44/tabib-korea/1qism.mp4">1-qism</option>
+    <option value="https://v.uzbeklar.biz/film44/tabib-korea/2qism.mp4">2-qism</option>
+    <option value="https://v.uzbeklar.biz/film44/tabib-korea/3qism.mp4">3-qism</option>
+    <option value="https://v.uzbeklar.biz/film44/tabib-korea/4qism.mp4">4-qism</option>
+    <option value="https://v.uzbeklar.biz/film44/tabib-korea/5qism.mp4">5-qism</option>
+    <!-- Add more episodes as needed -->
+  </select>
+
+  <script>
+    // Handle video switching
+    const episodeSelector = document.getElementById('episodeSelector');
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    episodeSelector.addEventListener('change', function () {
+      const newLink = this.value;
+      videoPlayer.src = newLink;
+    });
+  </script>
 </body>
 </html>
